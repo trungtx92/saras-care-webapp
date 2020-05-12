@@ -1,0 +1,122 @@
+@import './mixins.scss';
+
+.has-bgwbor {
+    padding: 25px 15px;
+    background-color: $white;
+    border-radius: 0.25rem;
+    border: 1px solid rgba($secondary, 0.3);
+
+    .row.each {
+        border-bottom: 1px solid rgba($secondary, .3);
+        padding: 15px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        h4 {
+            text-transform: uppercase;
+            font-size: 14px !important;
+            font-weight: bold;
+            color: $secondary;
+            margin: 25px 0;
+        }
+
+        label { color: #999; }
+
+        .case--evidence {
+            img {
+                height: 50px;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .edit {
+        input {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.has-table {
+    padding: 25px 15px;
+    background-color: $white;
+    border-radius: $bradius;
+    border: 1px solid rgba($secondary, .3);
+
+    .title {
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondary;
+
+        @include bp-lg {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.b-table {
+    .table {
+        tr {
+            transition: all .5s ease;
+            &:hover {
+                background-color: rgba($tertiary, 1);
+                transition: all .5s ease;
+            }
+
+            &:first-child { background-color: transparent; }
+
+            th.is-sortable {
+                border-color: $tertiary;
+                transition: all .5s ease;
+
+                &.is-current-sort { 
+                    border-color: $secondary; 
+                    transition: all .5s ease;
+                }
+
+                &:hover {
+                    border-color: $secondary;
+                    transition: all .5s ease;
+                }
+            }
+
+            td {
+                vertical-align: middle !important;
+                font-size: 14px;
+
+                ul { padding-left: 0; margin-bottom: 0; }
+
+                &[data-label="Notes"] {
+                    i { 
+                        color: $tertiary; 
+                        &.active { color: $secondary; }
+                    }
+                }
+                
+            }
+        }
+    }
+    .pagination {
+        ul {
+            margin: 0;
+            
+            li {
+                list-style: none;
+
+                a {
+                    &.pagination-link.is-current {
+                        background-color: $secondary;
+                        border-color: $secondary;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+
